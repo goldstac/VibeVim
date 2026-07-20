@@ -1,4 +1,4 @@
-<![CDATA[<div align="center">
+<div align="center">
 
 # ⚡ VibeVim
 
@@ -7,103 +7,104 @@
 ![Lua](https://img.shields.io/badge/Lua-2C2D72?style=flat&logo=lua&logoColor=white)
 ![Neovim](https://img.shields.io/badge/Neovim-57A143?style=flat&logo=neovim&logoColor=white)
 
-<pre>
+</div>
+
+```
 ██╗   ██╗██╗██████╗ ███████╗██╗   ██╗██╗███╗   ███╗
 ██║   ██║██║██╔══██╗██╔════╝██║   ██║██║████╗ ████║
 ██║   ██║██║██████╔╝█████╗  ██║   ██║██║██╔████╔██║
 ╚██╗ ██╔╝██║██╔══██╗██╔══╝  ╚██╗ ██╔╝██║██║╚██╔╝██║
  ╚████╔╝ ██║██████╔╝███████╗ ╚████╔╝ ██║██║ ╚═╝ ██║
   ╚═══╝  ╚═╝╚═════╝ ╚══════╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
-</pre>
+```
 
-</div>
+## Features
 
-## ✨ Features
+- Dracula theme — dark, vibrant, easy on the eyes
+- nvim-tree — file explorer with git status icons
+- Telescope — fuzzy find files, grep, buffers, help
+- Treesitter — better syntax highlighting & indentation
+- Built-in LSP — Mason + lspconfig (formatting disabled)
+- Alpha dashboard — welcome screen with quick actions
+- Modular structure — clean, organized file layout
+- lazy.nvim — fast plugin management
 
-- **🎨 Dracula Theme** — Easy on the eyes, dark and vibrant
-- **📂 nvim-tree** — File explorer with git status icons
-- **🔍 Telescope** — Fuzzy find everything (files, grep, buffers, help)
-- **📝 Treesitter** — Better syntax highlighting and indentation
-- **🛠️ Built-in LSP** — Powered by Mason + lspconfig (no auto-formatting)
-- **🏠 Alpha Dashboard** — Welcome screen with quick actions
-- **🧩 Modular** — Clean, organized file structure
-- **🚀 lazy.nvim** — Blazing fast plugin management
-
-## 📁 Structure
+## Structure
 
 ```
 ~/.config/nvim/
-├── init.lua                  # Entry point
-├── lazy-lock.json            # Plugin lockfile
+├── init.lua
+├── lazy-lock.json
 └── lua/
     ├── core/
-    │   ├── init.lua          # Loads options, keymaps, lazy
-    │   ├── options.lua       # Editor settings
-    │   ├── keymaps.lua       # Key mappings
-    │   └── lazy.lua          # lazy.nvim bootstrap
+    │   ├── init.lua       (loads options, keymaps, lazy)
+    │   ├── options.lua    (editor settings)
+    │   ├── keymaps.lua    (key mappings)
+    │   └── lazy.lua       (lazy.nvim bootstrap)
     └── plugins/
-        ├── alpha.lua         # Dashboard / welcome screen
-        ├── lsp.lua           # LSP config (formatting disabled)
-        ├── mason.lua         # LSP server installer
-        ├── nvim-tree.lua     # File explorer
-        ├── telescope.lua     # Fuzzy finder
-        ├── theme.lua         # Dracula colorscheme
-        └── treesitter.lua    # Syntax highlighting
+        ├── alpha.lua      (dashboard / welcome screen)
+        ├── lsp.lua        (LSP config, formatting disabled)
+        ├── mason.lua      (LSP server installer)
+        ├── nvim-tree.lua  (file explorer)
+        ├── telescope.lua  (fuzzy finder)
+        ├── theme.lua      (Dracula colorscheme)
+        └── treesitter.lua (syntax highlighting)
 ```
 
-## 🚀 Installation
+## Installation
 
 ```bash
-# Backup your existing config
+# backup existing config
 mv ~/.config/nvim ~/.config/nvim.bak
 
-# Clone VibeVim
+# clone VibeVim
 git clone https://github.com/yourusername/VibeVim ~/.config/nvim
 
-# Start neovim — plugins install automatically
+# start neovim — plugins install automatically
 nvim
 ```
 
-> **Prerequisites:** [Neovim 0.10+](https://github.com/neovim/neovim/releases), [ripgrep](https://github.com/BurntSushi/ripgrep) (for Telescope live grep), [make & gcc](https://gcc.gnu.org/) (for Telescope fzf-native build)
+**Prerequisites:** Neovim 0.10+, [ripgrep](https://github.com/BurntSushi/ripgrep) (for Telescope live grep), make & gcc (for Telescope fzf-native build)
 
-## ⌨️ Keymaps
+## Keymaps
 
 | Key | Action |
 |-----|--------|
-| `<leader>e` | Toggle file explorer |
-| `<leader>ff` | Find files |
-| `<leader>fg` | Live grep |
-| `<leader>fb` | List buffers |
-| `<leader>fh` | Help tags |
-| `<leader>fr` | Recent files |
-| `<leader>f.` | Resume last picker |
-| `<leader>w` | Save file |
-| `<leader>q` | Quit |
-| `<leader>Q` | Force quit |
+| `Space` + `e` | Toggle file explorer |
+| `Space` + `ff` | Find files |
+| `Space` + `fg` | Live grep |
+| `Space` + `fb` | List buffers |
+| `Space` + `fh` | Help tags |
+| `Space` + `fr` | Recent files |
+| `Space` + `f.` | Resume last picker |
+| `Space` + `w` | Save file |
+| `Space` + `q` | Quit |
+| `Space` + `Q` | Force quit |
 | `gd` | Go to definition |
 | `K` | Hover documentation |
 | `gr` | Find references |
 | `gi` | Go to implementation |
-| `<leader>rn` | Rename symbol |
-| `<leader>ca` | Code actions |
+| `Space` + `rn` | Rename symbol |
+| `Space` + `ca` | Code actions |
 | `[d` / `]d` | Previous / next diagnostic |
-| `<leader>d` | Show diagnostic float |
-| `<Alt+j>` / `<Alt+k>` | Move line up/down |
+| `Space` + `d` | Show diagnostic float |
+| `Alt` + `j` / `Alt` + `k` | Move line up/down |
 
-## 🛠️ LSP Servers
+## LSP Servers
 
 Automatically installed by Mason:
+
 - `clangd` (C/C++)
 - `lua_ls` (Lua)
 - `pyright` (Python)
 - `rust_analyzer` (Rust)
 - `ts_ls` (TypeScript/JavaScript)
 
-> Formatting is **disabled** — no auto-formatting on save. You're in full control.
+> Formatting is **disabled** — no auto-formatting on save.
 
-## 🎨 Customization
+## Customization
 
-Every plugin has its own file under `lua/plugins/`. Add new ones by creating a file there — lazy.nvim auto-discovers them.
+Each plugin has its own file under `lua/plugins/`. Add new ones by creating a file there:
 
 ```lua
 -- lua/plugins/my-plugin.lua
@@ -115,11 +116,10 @@ return {
 }
 ```
 
-## 📄 License
+## License
 
-MIT — do whatever you want with it.
+MIT
 
 ---
 
-<p align="center"><strong>VibeVim</strong> — code with good vibes ✌️</p>
-]]>
+<p align="center">VibeVim — code with good vibes</p>
